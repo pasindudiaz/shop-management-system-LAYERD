@@ -27,6 +27,12 @@ public class DashboardController {
     }
 
     public void LoadOrderDMan(ActionEvent actionEvent) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/OrderDetailsManagement.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 
     public void LoadOrderMan(ActionEvent actionEvent) {

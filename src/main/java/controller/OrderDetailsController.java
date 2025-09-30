@@ -1,0 +1,81 @@
+package controller;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.dto.OrderDetails;
+import service.OrderDetailsService;
+import service.OrderDetailsServiceImpl;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class OrderDetailsController implements Initializable {
+    OrderDetailsService orderDetailsService = new OrderDetailsServiceImpl();
+
+    @FXML
+    private TableColumn<?, ?> coldiscount;
+
+    @FXML
+    private TableColumn<?, ?> colitemid;
+
+    @FXML
+    private TableColumn<?, ?> colorderid;
+
+    @FXML
+    private TableColumn<?, ?> colquantity;
+
+    @FXML
+    private TextField discount;
+
+    @FXML
+    private TextField itemid;
+
+    @FXML
+    private TextField orderid;
+
+    @FXML
+    private TextField quantity;
+
+    @FXML
+    private TableView<OrderDetails> tblview;
+
+    @FXML
+    void deleteOrderDetails(ActionEvent event) {
+        orderDetailsService.deleteOrderDetails(orderid.getText());
+        tblview.setItems(orderDetailsService.getAllOrderDetails());
+
+    }
+
+    @FXML
+    void updateOrderDetails(ActionEvent event) {
+        orderDetailsService.updateOrderDetails(Integer.parseInt(quantity.getText()), Integer.parseInt(discount.getText()), orderid.getText(), itemid.getText());
+        tblview.setItems(orderDetailsService.getAllOrderDetails());
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        colorderid.setCellValueFactory(new PropertyValueFactory<>("orderId"));
+        colitemid.setCellValueFactory(new PropertyValueFactory<>("itemId"));
+        colquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        coldiscount.setCellValueFactory(new  PropertyValueFactory<>("discount"));
+        tblview.setItems(orderDetailsService.getAllOrderDetails());
+
+        tblview.getSelectionModel().selectedItemProperty().addListener(((observableValue, o, t1) -> {
+            if(t1!=null){
+                itemid.setText(t1.getItemId());
+                orderid.setText(t1.getOrderId());
+                quantity.setText(String.valueOf(t1.getQuantity()));
+                discount.setText(String.valueOf(t1.getDiscount()));
+            }
+        }
+        ));
+
+
+    }
+}
