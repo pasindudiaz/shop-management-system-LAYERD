@@ -1,15 +1,10 @@
 package service;
-
-import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.dto.Item;
 import model.dto.OrderDetails;
 import repository.OrderDetailsRepository;
 import repository.OrderDetailsRepositoryImpl;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
