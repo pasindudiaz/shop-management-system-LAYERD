@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.Customer;
 import service.CustomerService;
-import service.CustomerServiceImpl;
+import service.impl.CustomerServiceImpl;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -81,7 +81,8 @@ public class CustomerController implements Initializable {
 
         tblview.setItems(customerService.getAllCustomerDetails());
 
-        tblview.getSelectionModel().selectedItemProperty().addListener(((observableValue, o, t1) ->{
+        tblview.getSelectionModel().selectedItemProperty().addListener(((observableValue,
+                                                                         o, t1) ->{
             if(t1!=null){
                 cusid.setText(t1.getCusId());
                 cusname.setText(t1.getName());

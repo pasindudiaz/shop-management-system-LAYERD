@@ -1,13 +1,15 @@
-package repository;
+package repository.impl;
 
 import db.DBConnection;
 import model.dto.Item;
+import repository.ItemRepository;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ItemRepositoryImpl implements ItemRepository{
+public class ItemRepositoryImpl implements ItemRepository {
     @Override
     public void addItem(Item item) {
         try {

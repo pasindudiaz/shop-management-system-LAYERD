@@ -5,11 +5,19 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="546.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+<AnchorPane prefHeight="547.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
     <children>
+      <ImageView fitHeight="341.0" fitWidth="555.0" layoutX="51.0" layoutY="46.0" opacity="0.11" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/dashboard.jpg" />
+         </image>
+      </ImageView>
         <TextField fx:id="cusid" layoutX="209.0" layoutY="68.0" prefHeight="26.0" prefWidth="198.0" />
         <TextField fx:id="cusname" layoutX="209.0" layoutY="105.0" prefHeight="26.0" prefWidth="198.0" />
         <TextField fx:id="cusaddress" layoutX="209.0" layoutY="141.0" prefHeight="26.0" prefWidth="198.0" />
@@ -34,7 +42,7 @@
                 <Font name="Arial Rounded MT Bold" size="18.0" />
             </font>
         </Label>
-        <TableView fx:id="tblview" layoutX="38.0" layoutY="241.0" prefHeight="278.0" prefWidth="569.0">
+        <TableView fx:id="tblview" layoutX="46.0" layoutY="242.0" prefHeight="295.0" prefWidth="570.0">
             <columns>
                 <TableColumn fx:id="colcusid" prefWidth="138.40003204345703" text="Customer ID" />
                 <TableColumn fx:id="colname" prefWidth="131.99993896484375" text="Name" />
@@ -42,14 +50,18 @@
                 <TableColumn fx:id="colemail" prefWidth="181.60000000000002" text="Email" />
             </columns>
         </TableView>
-        <Label layoutX="178.0" layoutY="14.0" text="Customer Management">
+        <Label layoutX="192.0" layoutY="12.0" text="Customer Management" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="25.0" />
             </font>
         </Label>
-        <Button layoutX="439.0" layoutY="68.0" mnemonicParsing="false" onAction="#AddCustomer" prefHeight="26.0" prefWidth="86.0" text="ADD" />
-        <Button layoutX="439.0" layoutY="105.0" mnemonicParsing="false" onAction="#UpdateCustomer" prefHeight="26.0" prefWidth="86.0" text="UPDATE" />
-        <Button layoutX="439.0" layoutY="141.0" mnemonicParsing="false" onAction="#DeleteCustomer" prefHeight="26.0" prefWidth="86.0" text="DELETE" />
-        <Button layoutX="439.0" layoutY="179.0" mnemonicParsing="false" onAction="#ClearCustomer" prefHeight="26.0" prefWidth="86.0" text="CLEAR" />
+        <Button layoutX="439.0" layoutY="68.0" mnemonicParsing="false" onAction="#AddCustomer" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #4affd2;" text="ADD" />
+        <Button layoutX="439.0" layoutY="105.0" mnemonicParsing="false" onAction="#UpdateCustomer" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #4affd2;" text="UPDATE" />
+        <Button layoutX="439.0" layoutY="141.0" mnemonicParsing="false" onAction="#DeleteCustomer" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #4affd2;" text="DELETE" />
+        <Button layoutX="439.0" layoutY="179.0" mnemonicParsing="false" onAction="#ClearCustomer" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #4affd2;" text="CLEAR" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7b1fff" height="158.0" layoutX="14.0" layoutY="-49.0" stroke="TRANSPARENT" strokeType="INSIDE" width="21.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="418.0" layoutX="14.0" layoutY="129.0" stroke="#00000008" strokeType="INSIDE" width="21.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="437.0" layoutX="623.0" stroke="TRANSPARENT" strokeType="INSIDE" width="21.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#821fff" height="95.0" layoutX="623.0" layoutY="452.0" stroke="#00000005" strokeType="INSIDE" width="21.0" />
     </children>
 </AnchorPane>

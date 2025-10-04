@@ -1,14 +1,15 @@
-package repository;
+package repository.impl;
 
 import db.DBConnection;
 import model.dto.OrderDetails;
+import repository.OrderRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class OrderRepositoryImpl implements OrderRepository{
+public class OrderRepositoryImpl implements OrderRepository {
 
     public  ResultSet searchCustomer(String cusid){
         try {

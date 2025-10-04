@@ -15,15 +15,17 @@ public class DashboardController {
             throw new RuntimeException(e);
         }
         stage.show();
+        stage.setResizable(false);
     }
 
     public void LoadItemMan(ActionEvent actionEvent) {
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/ItemManagement.fxml"))));
-            stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        stage.show();
+        stage.setResizable(false);
     }
 
     public void LoadOrderDMan(ActionEvent actionEvent) {
@@ -33,6 +35,7 @@ public class DashboardController {
             throw new RuntimeException(e);
         }
         stage.show();
+        stage.setResizable(false);
     }
 
     public void LoadOrderMan(ActionEvent actionEvent) {
@@ -42,5 +45,6 @@ public class DashboardController {
             throw new RuntimeException(e);
         }
         stage.show();
+        stage.setResizable(false);
     }
 }

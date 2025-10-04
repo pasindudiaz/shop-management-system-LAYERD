@@ -1,14 +1,16 @@
-package service;
+package service.impl;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.dto.Customer;
 import repository.CustomerRepository;
-import repository.CustomerRepositoryImpl;
+import repository.impl.CustomerRepositoryImpl;
+import service.CustomerService;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CustomerServiceImpl implements CustomerService{
+public class CustomerServiceImpl implements CustomerService {
+
     ObservableList<Customer> CustomerList = FXCollections.observableArrayList();
     CustomerRepository customerRepository = new CustomerRepositoryImpl();
 

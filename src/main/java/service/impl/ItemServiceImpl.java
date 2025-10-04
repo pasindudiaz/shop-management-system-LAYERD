@@ -1,13 +1,16 @@
-package service;
+package service.impl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.dto.Item;
 import repository.ItemRepository;
-import repository.ItemRepositoryImpl;
+import repository.impl.ItemRepositoryImpl;
+import service.ItemService;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ItemServiceImpl implements ItemService {
+
     ObservableList<Item> ItemList = FXCollections.observableArrayList();
     ItemRepository itemRepository = new ItemRepositoryImpl();
 

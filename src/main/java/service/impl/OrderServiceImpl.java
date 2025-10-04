@@ -1,4 +1,4 @@
-package service;
+package service.impl;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,11 +7,13 @@ import model.dto.Item;
 import model.dto.Order;
 import model.dto.OrderDetails;
 import repository.OrderRepository;
-import repository.OrderRepositoryImpl;
+import repository.impl.OrderRepositoryImpl;
+import service.OrderService;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
     ObservableList<Order> OrderList = FXCollections.observableArrayList();
     OrderRepository orderRepository = new OrderRepositoryImpl();
 

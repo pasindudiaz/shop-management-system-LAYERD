@@ -1,14 +1,16 @@
-package repository;
+package repository.impl;
 
 import db.DBConnection;
 import model.dto.Customer;
+import repository.CustomerRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CustomerRepositoryImpl implements CustomerRepository{
+public class CustomerRepositoryImpl implements CustomerRepository {
+
     @Override
     public ResultSet getAllCustomerDetails() {
         try {

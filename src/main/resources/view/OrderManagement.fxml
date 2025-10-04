@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="648.0" prefWidth="899.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderController">
+<AnchorPane prefHeight="654.0" prefWidth="961.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderController">
     <children>
         <Label alignment="CENTER" layoutX="317.0" layoutY="48.0" prefHeight="35.0" prefWidth="272.0" text="Order Management">
             <font>
@@ -70,17 +70,26 @@
             </font>
         </Label>
         <Button layoutX="790.0" layoutY="107.0" mnemonicParsing="false" onAction="#searchCustomer" prefHeight="26.0" prefWidth="78.0" text="SEARCH" />
-        <TableView fx:id="tblview" layoutX="216.0" layoutY="323.0" prefHeight="293.0" prefWidth="474.0">
+        <TableView fx:id="tblview" layoutX="14.0" layoutY="327.0" prefHeight="294.0" prefWidth="426.0">
             <columns>
-                <TableColumn fx:id="colorderid" prefWidth="123.99993896484375" text="Order ID" />
-                <TableColumn fx:id="colcustomerid" prefWidth="123.2000732421875" text="Customer ID" />
-                <TableColumn fx:id="colorderdate" prefWidth="118.39999389648438" text="Order Date" />
-                <TableColumn fx:id="coltotal" prefWidth="111.20001220703125" text="Total" />
+                <TableColumn fx:id="colorderid" prefWidth="100.0" text="Order ID" />
+                <TableColumn fx:id="colcustomerid" prefWidth="112.79998779296875" text="Customer ID" />
+                <TableColumn fx:id="colorderdate" prefWidth="117.59994506835938" text="Order Date" />
+                <TableColumn fx:id="coltotal" prefWidth="95.20001220703125" text="Total" />
             </columns>
         </TableView>
         <Button layoutX="689.0" layoutY="273.0" mnemonicParsing="false" onAction="#clearOrder" prefHeight="26.0" prefWidth="178.0" text="CLEAR" />
         <Button layoutX="467.0" layoutY="273.0" mnemonicParsing="false" onAction="#addOrder" prefHeight="26.0" prefWidth="198.0" text="ADD" />
         <DatePicker fx:id="date" layoutX="182.0" layoutY="212.0" prefHeight="26.0" prefWidth="215.0" />
+      <TableView fx:id="tblitemview" layoutX="447.0" layoutY="327.0" prefHeight="294.0" prefWidth="502.0">
+        <columns>
+          <TableColumn fx:id="colitemid" prefWidth="75.0" text="Item ID" />
+          <TableColumn fx:id="colname" prefWidth="92.0" text="Name" />
+            <TableColumn fx:id="coldescription" prefWidth="162.39996337890625" text="Description" />
+            <TableColumn fx:id="colunitprice" prefWidth="78.400146484375" text="Unit Price" />
+            <TableColumn fx:id="colquantity" prefWidth="95.9998779296875" text="Quantity" />
+        </columns>
+      </TableView>
     </children>
 
 </AnchorPane>

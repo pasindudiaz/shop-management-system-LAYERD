@@ -1,10 +1,12 @@
-package service;
+package service.impl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.dto.Item;
 import model.dto.OrderDetails;
 import repository.OrderDetailsRepository;
-import repository.OrderDetailsRepositoryImpl;
+import repository.impl.OrderDetailsRepositoryImpl;
+import service.OrderDetailsService;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

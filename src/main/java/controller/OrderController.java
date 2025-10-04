@@ -9,16 +9,27 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.Customer;
+import model.dto.Item;
 import model.dto.Order;
 import model.dto.OrderDetails;
+import service.ItemService;
+import service.impl.ItemServiceImpl;
 import service.OrderService;
-import service.OrderServiceImpl;
+import service.impl.OrderServiceImpl;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OrderController implements Initializable {
+    public TableColumn colitemid;
+    public TableColumn colname;
+    public TableColumn coldescription;
+    public TableColumn colunitprice;
+    public TableColumn colquantity;
+    public TableView<Item> tblitemview;
+
     OrderService orderService = new OrderServiceImpl();
+    ItemService itemService = new ItemServiceImpl();
 
     @FXML
     private TextField address;
@@ -69,6 +80,7 @@ public class OrderController implements Initializable {
         orderService.addOrderDetails(new OrderDetails(orderid.getText(),itemid.getText(),Integer.parseInt(quantity.getText()),Integer.parseInt(discount.getText())));
         orderService.updateQuantity(Integer.parseInt(quantity.getText()),itemid.getText());
         tblview.setItems(orderService.getAllOrders());
+        tblitemview.setItems(itemService.getAllItemDetails());
 
     }
 
@@ -103,6 +115,20 @@ public class OrderController implements Initializable {
         colorderdate.setCellValueFactory(new PropertyValueFactory<>("date"));
         coltotal.setCellValueFactory(new PropertyValueFactory<>("total"));
         tblview.setItems(orderService.getAllOrders());
+
+        colitemid.setCellValueFactory(new PropertyValueFactory<>("itemId"));
+        colname.setCellValueFactory(new PropertyValueFactory<>("name"));
+        coldescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colunitprice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        colquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        tblitemview.setItems(itemService.getAllItemDetails());
+
+        tblitemview.getSelectionModel().selectedItemProperty().addListener(((observableValue, o, t1) ->{
+            if(t1!=null){
+                itemid.setText(t1.getItemId());
+            }
+        }
+        ));
 
     }
 }

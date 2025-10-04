@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.OrderDetails;
 import service.OrderDetailsService;
-import service.OrderDetailsServiceImpl;
+import service.impl.OrderDetailsServiceImpl;
 
 import java.net.URL;
 import java.util.ResourceBundle;

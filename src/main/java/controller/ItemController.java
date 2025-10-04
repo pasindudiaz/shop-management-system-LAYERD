@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.Item;
 import service.ItemService;
-import service.ItemServiceImpl;
+import service.impl.ItemServiceImpl;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -88,7 +88,8 @@ public class ItemController implements Initializable {
         colquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         tblview.setItems(itemService.getAllItemDetails());
 
-        tblview.getSelectionModel().selectedItemProperty().addListener(((observableValue, o, t1) ->{
+        tblview.getSelectionModel().selectedItemProperty().addListener(((observableValue,
+                                                                         o, t1) ->{
             if(t1!=null){
                 itemid.setText(t1.getItemId());
                 name.setText(t1.getName());
